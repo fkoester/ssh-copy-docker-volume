@@ -12,4 +12,4 @@ fi
 VOLUME="${1}"
 TARGET_HOST=${2}
 
-docker run --rm -v ${VOLUME}:/from alpine ash -c "cd /from ; tar -cjf - . " | ssh ${TARGET_HOST} "docker run --rm -i -v ${VOLUME}:/to alpine ash -c \"cd /to ; tar -xjvf - \" "
+docker run --rm -v ${VOLUME}:/from busybox ash -c "cd /from ; tar -cjf - . " | ssh ${TARGET_HOST} "docker run --rm -i -v ${VOLUME}:/to busybox ash -c \"cd /to ; tar -xjvf - \" "
