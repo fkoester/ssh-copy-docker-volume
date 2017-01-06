@@ -9,7 +9,9 @@ then
   exit -1
 fi
 
-VOLUME="${1}"
+VOLUME=${1}
 TARGET_HOST=${2}
 
-docker run --rm -v ${VOLUME}:/from busybox ash -c "cd /from ; tar -cjf - . " | ssh ${TARGET_HOST} "docker run --rm -i -v ${VOLUME}:/to busybox ash -c \"cd /to ; tar -xjvf - \" "
+REMOTE_CMD="docker volume create ${VOLUME} ; docker run --rm -i -v ${VOLUME}:/to busybox ash -c \"cd /to ; tar -xjvf - \" "
+
+docker run --rm -v ${VOLUME}:/from busybox ash -c "cd /from ; tar -cjf - . " | ssh ${TARGET_HOST} "${REMOTE_CMD}"
