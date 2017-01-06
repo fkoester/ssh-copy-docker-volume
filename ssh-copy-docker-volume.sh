@@ -1,5 +1,7 @@
 #! /bin/bash
 
+## Author: Fabian Köster
+## License: AGPLv3
 ## Based on https://www.guidodiepen.nl/2016/05/transfer-docker-data-volume-to-another-host/
 ## by Guido Diepen
 
