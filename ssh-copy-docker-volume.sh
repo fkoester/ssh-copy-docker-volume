@@ -5,7 +5,7 @@
 
 if [ $# -lt 2 ]
 then
-  echo 'Usage: ssh-copy-database.sh <docker volume name> <target host>'
+  echo 'Usage: ./ssh-copy-database.sh <docker volume name> <target host>'
   exit -1
 fi
 

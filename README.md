@@ -5,7 +5,7 @@ A simple script for transferring a docker volume via SSH.
 ## Usage
 
 ```bash
-$ ssh-copy-database.sh <docker volume name> <target host>
+$ ./ssh-copy-database.sh <docker volume name> <target host>
 ```
 
 ## Credits
